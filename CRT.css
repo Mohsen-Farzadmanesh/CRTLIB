@@ -236,11 +236,11 @@ li {
     border: 0.25em solid #ffae00;
 }
 
-span.alt {
+span.popover {
     font-weight: 700;
 }
 
-span.alt::before {
+span.popover::before {
     content: attr(text);
     position: absolute;
     z-index: 1000;
@@ -254,23 +254,7 @@ span.alt::before {
     font-weight: 400;
 }
 
-div.alt {
-    display: inline;
-    opacity: 0;
-}
-
-div.alt::after {
-    content: attr(text);
-    display: inline;
-    cursor: text;
-    font-weight: 700;
-}
-
-div.alt::after:hover div.alt {
-    opacity: 1;
-}
-
-.alt:hover::before {
+.popover:hover::before {
     margin-top: -35px;
     opacity: 1;
     transition: all 0.7s;
@@ -281,6 +265,7 @@ div.alt::after:hover div.alt {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
