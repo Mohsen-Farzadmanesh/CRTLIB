@@ -1,3 +1,18 @@
+:root {
+    --light-suc: #48c448;
+    --light-err: #e24545;
+    --light-war: #ffe100;
+    --border-suc: #239223;
+    --border-err: #c03434;
+    --border-war: #ccb400;
+    --light: #ffffff;
+    --dark: #2c2c2c;
+
+    --suc: #1c7e1c;
+    --war: #ffae00;
+    --err: #c03434;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -116,6 +131,23 @@ li {
     font-size: 17px;
 }
 
+*::-webkit-scrollbar {
+    width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #c9c9c9;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #b6b6b6;
+    transition: 1s;
+}
+
 /* -------------------------------------- */
 
 .text-box {
@@ -138,37 +170,22 @@ li {
 
 .btn-suc {
     border: none;
-    background: rgb(35, 146, 35);
+    background: var(--light-suc);
     color: #fff;
     transition: background 0.7s;
 }
 
 .btn-err {
     border: none;
-    background: rgb(192, 52, 52);
+    background: var(--light-err);
     color: #fff;
     transition: background 0.7s;
 }
 
 .btn-war {
     border: none;
-    background: rgb(255, 225, 0);
+    background: var(--light-war);
     color: #000;
-    transition: background 0.7s;
-}
-
-.btn-suc:hover {
-    background: rgb(28, 126, 28);
-    transition: background 0.7s;
-}
-
-.btn-err:hover {
-    background: rgb(143, 44, 44);
-    transition: background 0.7s;
-}
-
-.btn-war:hover {
-    background: rgb(223, 197, 0);
     transition: background 0.7s;
 }
 
@@ -181,7 +198,6 @@ li {
     align-items: center;
     justify-content: flex-start;
     font-size: 16px;
-    color: #2f2f2f;
 }
 
 .alert-rtl {
@@ -189,18 +205,21 @@ li {
 }
 
 .alert-suc {
-    background: rgba(35, 146, 35, 0.25);
-    border: 1px solid rgb(28, 126, 28);
+    background: var(--light-suc);
+    border: 1px solid var(--border-suc);
+    color: var(--light);
 }
 
 .alert-err {
-    background: rgba(192, 52, 52, 0.25);
-    border: 1px solid rgb(143, 44, 44);
+    background: var(--light-err);
+    border: 1px solid var(--border-err);
+    color: var(--light);
 }
 
 .alert-war {
-    background: rgba(255, 225, 0, 0.25);
-    border: 1px solid rgb(255, 174, 0);
+    background: var(--light-war);
+    border: 1px solid var(--border-war);
+    color: var(--dark);
 }
 
 .loading {
@@ -225,15 +244,15 @@ li {
 }
 
 .loading-err {
-    border: 0.25em solid #c03434;
+    border: 0.25em solid var(--err);
 }
 
 .loading-suc {
-    border: 0.25em solid #1c7e1c;
+    border: 0.25em solid var(--suc);
 }
 
 .loading-war {
-    border: 0.25em solid #ffae00;
+    border: 0.25em solid var(--war);
 }
 
 span.popover {
@@ -260,6 +279,82 @@ span.popover::before {
     transition: all 0.7s;
 }
 
+.not {
+    width: 320px;
+    height: 45px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    border-radius: 8px;
+    left: -20%;
+    top: 92vh;
+    animation-name: notification;
+    animation-duration: 5s;
+    font-weight: 600;
+}
+
+.not-suc {
+    background: var(--light-suc);
+    border: 1px solid var(--border-suc);
+    color: var(--light);
+}
+
+.not-war {
+    background: var(--light-war);
+    border: 1px solid var(--border-war);
+    color: var(--dark);
+}
+
+.not-err {
+    background: var(--light-err);
+    border: 1px solid var(--border-err);
+    color: var(--light);
+}
+
+.gls {
+    border-radius: 12px;
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.gls-1 {
+    backdrop-filter: blur(4px);
+}
+
+.gls-2 {
+    backdrop-filter: blur(8px);
+}
+
+.gls-3 {
+    backdrop-filter: blur(14px);
+}
+
+.gls-4 {
+    backdrop-filter: blur(22px);
+}
+
+.gls-5 {
+    backdrop-filter: blur(300px);
+}
+
+@keyframes notification {
+    0% {
+        left: -20%;
+    }
+
+    30% {
+        left: 2%;
+    }
+
+    70% {
+        left: 2%;
+    }
+
+    100% {
+        left: -20%;
+    }
+}
 
 @keyframes loading {
     from {
@@ -279,6 +374,10 @@ span.popover::before {
 
 .center {
     margin: 0 auto;
+}
+
+.flex {
+    display: flex;
 }
 
 .row {
@@ -301,4 +400,40 @@ span.popover::before {
 
 .s-e {
     justify-content: space-evenly;
+}
+
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.justify-content-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.align-items-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+.align-items-end {
+    display: flex;
+    align-items: flex-end;
+}
+
+.j-i-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

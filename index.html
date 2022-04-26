@@ -15,6 +15,27 @@
             align-items: center;
             justify-content: flex-start;
         }
+
+        .gls-box {
+            width: 100%;
+            height: 150vh;
+            background-image: url("./006.jpg");
+            background-size: cover;
+            padding: 125px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            border-radius: 15px;
+        }
+
+        .gls {
+            width: 65%;
+            height: 24vh;
+            font-size: 40px;
+            font-weight: 800;
+            color: white;
+        }
     </style>
 </head>
 
@@ -59,9 +80,9 @@ Dignissimos deserunt ipsam quia, minima magni hic, ipsa labore iste delectus quo
     </div>
     <div class="row s-b max-width center">
         <button class="btn">.btn</button>
-        <button class="btn btn-suc">.btn .btn-suc</button>
-        <button class="btn btn-err">.btn .btn-err</button>
-        <button class="btn btn-war">.btn .btn-war</button>
+        <button class="btn btn-suc" onclick="not('suc', 'Success!')">.btn .btn-suc</button>
+        <button class="btn btn-err" onclick="not('err', 'Error!')">.btn .btn-err</button>
+        <button class="btn btn-war" onclick="not('war', 'Warning!')">.btn .btn-war</button>
     </div>
     <hr />
     <div class="col s-b max-width center">
@@ -84,6 +105,16 @@ Dignissimos deserunt ipsam quia, minima magni hic, ipsa labore iste delectus quo
         <span class="popover" text="test 3">nisi</span> quas eveniet quidem quo eaque. Debitis asperiores quasi dicta
         facilis.
     </div>
+
+    <div class="gls-box">
+        <div class="gls gls-1 j-i-center">.gls .gls-1</div>
+        <div class="gls gls-2 j-i-center">.gls .gls-2</div>
+        <div class="gls gls-3 j-i-center">.gls .gls-3</div>
+        <div class="gls gls-4 j-i-center">.gls .gls-4</div>
+        <div class="gls gls-5 j-i-center">.gls .gls-5</div>
+    </div>
 </body>
+
+<script src="./CRT.js"></script>
 
 </html>
